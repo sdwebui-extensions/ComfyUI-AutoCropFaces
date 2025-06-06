@@ -1,6 +1,5 @@
 import torch
 import comfy.utils
-from .Pytorch_Retinaface.pytorch_retinaface import Pytorch_RetinaFace
 from comfy.model_management import get_torch_device
 
 class AutoCropFaces:
@@ -67,6 +66,7 @@ class AutoCropFaces:
         return a / b
 
     def auto_crop_faces_in_image (self, image, max_number_of_faces, scale_factor, shift_factor, aspect_ratio, method='lanczos'): 
+        from .Pytorch_Retinaface.pytorch_retinaface import Pytorch_RetinaFace
         image_255 = image * 255
         rf = Pytorch_RetinaFace(top_k=50, keep_top_k=max_number_of_faces, device=get_torch_device())
         dets = rf.detect_faces(image_255)

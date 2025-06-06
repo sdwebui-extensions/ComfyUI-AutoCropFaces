@@ -12,7 +12,7 @@ from .models.retinaface import RetinaFace
 from .utils.box_utils import decode, decode_landm
 
 class Pytorch_RetinaFace:
-    def __init__(self, cfg="mobile0.25", pretrained_path="./weights/mobilenet0.25_Final.pth", weights_path="./weights/mobilenetV1X0.25_pretrain.tar", device="auto", vis_thres=0.6, top_k=5000, keep_top_k=750, nms_threshold=0.4, confidence_threshold=0.02):
+    def __init__(self, cfg="mobile0.25", pretrained_path="/stable-diffusion-cache/models/facedetection/detection_mobilenet0.25_Final.pth", weights_path="/stable-diffusion-cache/models/facedetection/mobilenetV1X0.25_pretrain.tar", device="auto", vis_thres=0.6, top_k=5000, keep_top_k=750, nms_threshold=0.4, confidence_threshold=0.02):
         self.vis_thres = vis_thres
         self.top_k = top_k
         self.keep_top_k = keep_top_k
